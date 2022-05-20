@@ -1,9 +1,16 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import {ref, watch} from 'vue'
 
 defineProps<{ msg: string }>()
 
 const count = ref(0)
+
+watch(count, () => {
+  chrome.runtime.sendMessage({'content': 'ping'}, (response) => {
+    console.log(response)
+    alert(response.content)
+  })
+})
 </script>
 
 <template>

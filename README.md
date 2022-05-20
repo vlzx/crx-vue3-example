@@ -4,8 +4,9 @@
 ```shell
 yarn create vite crx-vue3-example --template vue-ts
 yarn add -D @crxjs/vite-plugin
+yarn add -D @types/chrome
 ```
-```json
+```json5
 // src/manifest.json
 {
   "manifest_version": 3,
